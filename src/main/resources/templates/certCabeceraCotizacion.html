@@ -1,0 +1,11 @@
+<div th:fragment="certCabeceraCotizacion">
+    <table style='border-collapse: collapse; width: 97%;'>
+        <tr>
+            <td style='border: .5pt solid  #000000; width:122px; padding-left:5px;' th:if="${typeDownload == 'PÓLIZA NUEVA'}"><strong>PÓLIZA No.</strong><br /><span th:text="${informationPolicy.uniqueIdentifier}"></span></td>
+            <td style='border: .5pt solid  #000000; width:122px; padding-left:5px;' th:if="${typeDownload == 'COTIZACIÓN'}"><strong>COTIZACIÓN No.</strong><br /><span th:text="${informationPolicy.uniqueIdentifier}"></span></td>
+            <td style='border: .5pt solid  #000000; width:190px; padding-left:5px;'><strong> <span th:text="${typeDownload}"></span></strong></td>
+            <td style='border: .5pt solid  #000000; width:190px; padding-left:5px;'><strong>PLAN No.</strong><br /> <span th:text="${informationPolicy.numberPlan}"></span></td>
+            <td style='border: .5pt solid  #000000; width:120px; padding-left:5px;'><strong>SUCURSAL</strong><br /> <span th:text="${informationPolicy.nameOffice}"></span></td>
+        </tr>
+    </table>
+</div>

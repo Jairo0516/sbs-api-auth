@@ -1,0 +1,35 @@
+server:
+  port: ${SERVER_PORT:8092}
+  context-path: /
+spring:
+  datasource:
+    url: ${PERSISTENCE_URL:jdbc:postgresql://datacentrict.cif2icb2ijak.us-east-1.rds.amazonaws.com/datacentrict}
+    username: ${PERSISTENCE_USER:postgres}
+    password: ${PERSISTENCE_PASSWORD:7OLYY**89}
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 10
+      idle-timeout: 90000
+      minimum-idle: 2
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+security:
+  jwt:
+    token-secret-key: ${TOKEN_SECRET_KEY}
+  token-urls:
+    - url: /api/v1/sbs/sftp/file
+pepiPostConfig:
+  apiKey: 4263ad85239509ac2e2950f4429f781b
+  max_number_personalizations: 1
+  emailFromSBS: digital@digital.sbseguros.co
+  number_mails_pepipost: 5000
+  apiKeyDev: 4263ad85239509ac2e2950f4429f781b
+  number_mails_pepipost_dev: 1000

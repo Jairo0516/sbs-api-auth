@@ -1,0 +1,52 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+<div th:fragment="certCoberturasVida">
+    <div>
+
+        <table style="text-align: left; width:700px;">
+            <tr>
+                <td style="width:415px; text-align:center;"><strong>COBERTURA</strong></td>
+                <td colspan="3" style="width:210px;"><strong>SUMA ASEGURADA TOTAL</strong></td>
+                <td style="width:100px;"><strong>NRO DÍAS MÁXIMO</strong></td>
+            </tr>
+        </table>
+
+        <table style="text-align: left; width:690px; table-layout: fixed;" th:each="risk : ${aditionalInsuredList.riskPlans}">
+            <tr>
+
+                <td style="width:290px; font-size:9px; word-wrap: break-word;">
+                    <span th:text="${risk.namePlan}"></span>
+                </td>
+
+                <td style="width:2px;"></td>
+                <td style="width:2px; text-align:right;"></td>
+
+                <td style="width:156px;text-align: center; font-size:9px;">
+                    <div style="text-align:left; ">
+                        <span style="width: 1px;">$</span>
+                        <span style="float: right; width: 155px; " th:text="${risk.sumTotal}"> </span>
+                    </div>
+                </td>
+
+                <td style="width:2px;"></td>
+
+                <td style="width:20px; font-size:9px; text-align:center;">
+                    <span th:text="${risk.numDays}"></span>
+                </td>
+
+            </tr>
+        </table>
+
+<!--        <div th:switch="${risk.beneficiariesFlag}">-->
+<!--            <div th:case="true">-->
+<!--                <div th:switch="${cover.indexCoverageListRisk}">-->
+<!--                    <div th:case="${risk.countCoverages}">-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        <div th:include="certBeneficiarios::certBeneficiarios"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>

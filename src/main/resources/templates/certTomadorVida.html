@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<div th:fragment="certTomadorVida">
+    <table  style="text-align: left; width:97%; border-collapse: collapse;">
+        <tr>
+            <td style="padding-left:5px; border-left: .5pt solid  #000000;">TOMADOR:</td>
+            <td colspan="5"><span th:text="${informationPolicy.nameCompany}"></span></td>
+            <td style="width: 10%"><span th:text="${informationPolicy.typeDocumentCompany}"></span>: </td>
+            <td style="width: 10%; border-right: .5pt solid  #000000;"><span th:text="${informationPolicy.numberDocumentCompany}"></span></td>
+        </tr>
+        <tr>
+            <td style="padding-left:5px; width: 10%; border-left: .5pt solid  #000000;">DIRECCIÓN</td>
+            <td style="width: 30%"><span th:text="${informationPolicy.addressCompany}"></span></td>
+            <td style="width: 5%">TELEFONO:</td>
+            <td style="width: 10%"><span th:text="${informationPolicy.phoneCompany}"></span></td>
+            <td style="width: 5%">CIUDAD:</td>
+            <td style="width: 10%"><span th:text="${informationPolicy.cityCompany}"></span></td>
+            <td style="width: 5%">PAÍS:</td>
+            <td style="width: 10%; border-right: .5pt solid  #000000;"><span th:text="${informationPolicy.countryCompany}"></span></td>
+        </tr>
+        <tr>
+            <td style="padding-left:5px; width: 10%; border: .5pt solid  #000000 !important; border-bottom:none !important; border-top:none !important; border-right:none !important;"><strong>ASEGURADO:</strong></td>
+            <td  colspan="5"><strong><span th:text="${informationPolicy.insuredPrincipal.name}"></span></strong></td>
+            <td style="width: 5%;"><strong><span th:text="${informationPolicy.insuredPrincipal.typeDocument}"></span>:</strong></td>
+            <td style="width: 10%; border-right: .5pt solid  #000000;"><strong><span th:text="${informationPolicy.insuredPrincipal.numberIdentification}"></span></strong></td>
+        </tr>
+        <tr>
+            <td style="padding-left:5px; width: 10%; border: .5pt solid  #000000 !important; border-bottom:none !important; border-top:none !important; border-right:none !important;"><strong>DIRECCIÓN:</strong></td>
+            <td  colspan="5"><strong><span th:text="${informationPolicy.insuredPrincipal.address}"></span></strong></td>
+            <td style="width: 5%;"></td>
+            <td style="width: 10%; border-right: .5pt solid  #000000;"></td>
+        </tr>
+        <tr>
+            <td style="padding-left:5px; width: 10%; border: .5pt solid  #000000 !important; border-top: none !important; border-right: none !important;"><strong>BENEFICIARIO:</strong></td>
+            <td colspan="7" style=" border-bottom: .5pt solid  #000000; border-right:.4pt solid  #000000; font-size:10px;"><strong><span>LOS DESIGNADOS POR EL ASEGURADO, EN CASO DE NO EXISTIR DESIGNACIÓN SERÁN LOS DE LEY</span></strong></td>
+        </tr>
+    </table>
+</div>
+<br/>

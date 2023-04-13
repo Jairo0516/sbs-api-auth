@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+<div th:fragment="certBeneficiarios">
+
+    <div th:if="${informationPolicy.beneficiaryRisk.isEmpty()}">
+        <br>
+        <br>
+        <div style="width:97%; display:block; position: relative; padding-left: 10px"><strong>Beneficiarios de Ley</strong></div>
+    </div>
+
+    <div th:if="${!informationPolicy.beneficiaryRisk.isEmpty()}">
+        <table style="text-align: left; width:700px;">
+            <tr>
+                <td style="width:450px;"><strong>BENEFICIARIOS</strong></td>
+                <td style="width:150px;"><strong>%PARTICIPACIÓN</strong></td>
+                <td style="width:100px; text-align:center;"><strong>PARENTESCO</strong></td>
+            </tr>
+        </table>
+        <table style="text-align: left; width:700px;">
+            <tr th:each="beneficiary : ${informationPolicy.beneficiaryRisk}">
+                <td style="font-size:9px; width:440px;"><span th:text="${beneficiary.beneficiaryName}"></span></td>
+                <td style="width:30px;"></td>
+                <td style="font-size:9px; width:20px;"><span th:text="${beneficiary.percentPartition}"></span></td>
+                <td style="font-size:9px; width:10px;">%</td>
+                <td style="width:90px;"></td>
+                <td style="font-size:9px; width:110px; text-align:center;"><span th:text="${beneficiary.beneficiaryRelationship}"></span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>

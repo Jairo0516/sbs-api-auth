@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+<div th:fragment="certRiesgoPersona">
+    <br/>
+    <table style="border-collapse: collapse; width: 97%;">
+        <tr>
+            <td style="padding-left:5px;">
+                <strong>INFORMACIÓN DEL RIESGO</strong>
+                <br/>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <table style="width:97%; border-collapse: collapse;">
+        <tr>
+            <td style="border: .5pt solid  #000000; width:100px;">
+                TIPO DE ASEGURADO
+                <br/>
+                <span th:text="${aditionalInsuredList.kinship}"></span>
+            </td>
+            <td style="border: .5pt solid  #000000; width:120px;">
+                I.D. ASEGURADO PRINCIPAL:
+                <br/>
+                <span th:text="${aditionalInsuredList.numberIdentification}"></span>
+            </td>
+            <td style="border: .5pt solid  #000000; width:98px;">
+                NOMBRE ASEGURADO PRINCIPAL:
+                <br/>
+                <span th:text="${aditionalInsuredList.name}"></span>
+            </td>
+        </tr>
+    </table>
+</div>

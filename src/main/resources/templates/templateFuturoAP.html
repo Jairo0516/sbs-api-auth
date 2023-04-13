@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://belcorptestimage.s3.amazonaws.com/templateStyle.css"/>
+</head>
+<body>
+    <div>
+        <img src="https://belcorptestimage.s3.amazonaws.com/portadaMercadeoEmpresarial.png" class="portada" style="width: 97%" alt=""></img>
+    </div>
+    <div style="page-break-before:always">&nbsp;</div>
+
+    <!--PRIMERA PAGINA-->
+
+    <div th:each="aditionalInsuredList : ${informationPolicy.aditionalInsuredList}">
+        <div th:include="certHeader::certHeader"></div>
+        <div th:include="certCabeceraCotizacion::certCabeceraCotizacion"></div>
+        <div th:include="certTomadorVida::certTomadorVida"></div>
+        <div th:include="certVigenciaCotizacion::certVigenciaCotizacion"></div>
+        <div th:include="certIntermediario::certIntermediario"></div>
+
+        <div th:include="certRiesgoPersona::certRiesgoPersona"></div>
+
+        <div style="position: relative;">
+            <br/>
+            <div style="width:97%; text-align:center; display:block; position: relative;"><strong>AMPAROS Y COBERTURAS</strong></div>
+            <div style="border: 0.2px solid  #000000; height:300px; width:97%; margin-left: 10px; display: block; position:relative">
+                <div style=" height: 100%; background-image: url('/images/watermarkSBS.png'); background-repeat: no-repeat; background-attachment:fixed; background-position:center;">
+                    <div th:include="certCoberturasVida::certCoberturasVida"></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:10px;" th:include="certTotalesVida::certTotalesVida"></div>
+        <div style="width: 95%; heigth: 100px">
+            <img style="width: 100%;" src="https://belcorptestimage.s3.amazonaws.com/AVISOIMPORTANTE.jpeg"  alt=""></img>
+        </div>
+
+        <div style="margin-top:5px;" th:include="certCotizacionFooter::certCotizacionFooter"></div>
+
+    </div>
+    <!--PRIMERA PAGINA-->
+
+    <!--SEGUNDA PAGINA CON BENEFICIARIOS-->
+    <div th:if="${typeDownload == 'PÓLIZA NUEVA'}" >
+        <div style="page-break-before:always">&nbsp;</div>
+        <div style="position: relative;">
+            <div th:include="certHeader::certHeader"></div>
+            <div th:include="certCabeceraCotizacion::certCabeceraCotizacion"></div>
+            <div th:include="certTomadorVida::certTomadorVida"></div>
+            <div th:include="certVigenciaCotizacion::certVigenciaCotizacion"></div>
+            <div th:include="certIntermediario::certIntermediario"></div>
+            <br/>
+            <div style="position: relative;">
+                <br/>
+                <div style="width:97%; text-align:center; display:block; position: relative;"><strong>BENEFICIARIOS</strong></div>
+                <div style="border: 0.2px solid  #000000; height:460px; width:97%; margin-left: 10px; display: block; position:relative">
+                    <div style=" height: 100%; background-image: url('/images/watermarkSBS.png'); background-repeat: no-repeat; background-attachment:fixed; background-position:center;">
+                        <div th:include="certBeneficiarios::certBeneficiarios"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top:10px;" th:include="certTotalesVida::certTotalesVida"></div>
+
+            <div style="margin-top:5px;" th:include="certCotizacionFooter::certCotizacionFooter"></div>
+        </div>
+    </div>
+
+
+
+<div th:if="${typeDownload != 'PÓLIZA NUEVA'}"   style="page-break-before:always">&nbsp;</div>
+
+<div th:if="${typeDownload != 'PÓLIZA NUEVA'}" th:each="textPolicy: ${informationPolicy.textsPolicyList}">
+    <div  style="background-image: url('https://belcorptestimage.s3.amazonaws.com/watermarkSBS.png'); background-repeat: no-repeat; background-attachment:fixed; background-position:center;">
+
+        <div th:include="certHeader::certHeader"></div>
+        <div th:include="certCabeceraCotizacion::certCabeceraCotizacion"></div>
+        <div th:include="certTomadorVida::certTomadorVida"></div>
+        <div th:include="certVigenciaCotizacion::certVigenciaCotizacion"></div>
+        <div th:include="certIntermediario::certIntermediario"></div>
+        <div th:each="aditionalInsuredList : ${informationPolicy.aditionalInsuredList[0]}">
+            <div th:include="certRiesgoPersona::certRiesgoPersona"></div>
+        </div>
+        <br/>
+        <div style="background-image: url('/images/watermarkSBS.png'); background-repeat: no-repeat; background-attachment:fixed; background-position:center;">
+            <div th:remove="tag" th:utext="${textPolicy}"></div>
+        </div>
+    </div>
+    <div style="margin-top:5px;" th:include="certCotizacionFooter::certCotizacionFooter"></div>
+</div>
+
+</body>
+</html>

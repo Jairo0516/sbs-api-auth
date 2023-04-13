@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+<div th:fragment="certHeader">
+ 	<table style="width:97%; table-layout: fixed;">
+		<tr>
+			<td style="width:150px; word-wrap: break-word;">
+				<p style="font-size: 9px;">
+					<strong> SBS SEGUROS COLOMBIA S.A.</strong><br />
+					860037707-9
+				</p>
+			</td>
+			<td style="text-align: center; width:380px; word-wrap: break-word;">
+				<div class="tituloPolizaRamo"><span th:text="${informationPolicy.namePlan}"></span></div>
+			</td>
+			<td style="text-align: center; width:200px;">
+				<img src="https://belcorptestimage.s3.amazonaws.com/SBS.png" class="logo"/>
+			</td>
+		</tr>
+	</table>
+</div>

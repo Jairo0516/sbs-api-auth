@@ -1,0 +1,106 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+<div th:fragment="certVigenciaCotizacion">
+    <table th:if="${typeDownload != 'PÓLIZA NUEVA'}" style="text-align: left; width:97%; border-collapse: collapse;">
+        <tr>
+            <td style="width:97%; border: .5pt solid  #000000; border-top-style: none !important;">
+                <div style="margin-left: 10px; height: 64px; ">
+                    <strong>FECHA DE COTIZACIÓN:</strong><br/>
+                    (Día-Mes-Año) <br />
+                    <span th:text="${informationPolicy.quotationDate}"></span>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <table th:if="${typeDownload == 'PÓLIZA NUEVA'}" style="text-align: left; width:97%; border-collapse: collapse;">
+        <tr style="width:97%; border: .5pt solid  #000000; border-top-style: none !important; ">
+
+            <td style="width: 14%; border-right: .5pt solid #000000; text-align:center; border-left: .5pt solid #000000;border-bottom: .5pt solid #000000">
+
+                <div style="border-bottom: .5pt solid #000000; height: 27px;">
+                    <strong>FECHA DE COTIZACIÓN:</strong>
+                </div>
+
+                <div style="height: 37px;">
+                    (Día-Mes-Año)
+                    <br/>
+                    <span th:text="${informationPolicy.quotationDate}"></span>
+                </div>
+
+            </td>
+
+            <td  style="width: 28%; border-right: .5pt solid #000000; text-align:center; border-bottom: .5pt solid #000000">
+
+                <div style="border-bottom: .5pt solid #000000; height: 27px; ">
+                    <strong>VIGENCIA:</strong>
+                </div>
+
+                <div style="width: 49%; height: 37px; float: left; border-right: .5pt solid #000000; ">
+                    DESDE LAS 16:00
+                    <br/>
+                    (Día-Mes-Año)
+                    <br/>
+                    <span th:text="${informationPolicy.initDateValid}"></span>
+                </div>
+
+                <div style="width: 50%; height: 37px; float:right">
+                    HASTA LAS 16:00
+                    <br/>
+                    (Día-Mes-Año)
+                    <br/>
+                    <span th:text="${informationPolicy.finishDateValid}"></span>
+                </div>
+
+            </td>
+
+            <td style="width: 3%; border-right: .5pt solid #000000; text-align:center; border-bottom: .5pt solid #000000">
+
+                <div style="border-bottom: .5pt solid #000000;  height: 27px; ">
+                    <strong>DIAS:</strong>
+                </div>
+
+                <div style="height: 37px;">
+                    <span th:text="${informationPolicy.daysValid}"></span>
+                </div>
+
+            </td>
+
+            <td  style="width: 33%; border-right: .5pt solid #000000; text-align:center; border-bottom: .5pt solid #000000">
+
+                <div style="border-bottom: .5pt solid #000000;  height: 27px;">
+                    <strong>PERIODO COBRO:</strong>
+                </div>
+
+                <div style="width: 49%; height: 37px; float: left; border-right: .5pt solid #000000; ">
+                    DESDE LAS 16:00
+                    <br/>
+                    (Día-Mes-Año)
+                    <br/>
+                    <span th:text="${informationPolicy.initDateValid}"></span>
+                </div>
+
+                <div style="width: 50%; height: 37px; float:right">
+                    HASTA LAS 16:00
+                    <br/>
+                    (Día-Mes-Año)
+                    <br/>
+                    <span th:text="${informationPolicy.finishDateValid}"></span>
+                </div>
+
+            </td>
+
+            <td  style="width: 3%; border-right: .5pt solid #000000; text-align:center; border-bottom: .5pt solid #000000">
+
+                <div style="border-bottom: .5pt solid #000000; height: 27px; ">
+                    <strong>DIAS:</strong>
+                </div>
+
+                <div style="height: 37px;">
+                    <br/>
+                    <span th:text="${informationPolicy.daysValid}"></span>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</div>

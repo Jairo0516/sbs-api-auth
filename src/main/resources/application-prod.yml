@@ -1,0 +1,39 @@
+server:
+  port: ${SERVER_PORT:8091}
+  context-path: /
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://10.140.173.62:5432/sbsdatacentric?prepareThreshold=0}
+    username: ${DATASOURCE_USERNAME:Consulta_Dev}
+    password: ${DATASOURCE_PASSWORD:Naos50*20+}
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 10
+      idle-timeout: 90000
+      minimum-idle: 2
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+security:
+  jwt:
+    token-secret-key: ${TOKEN_SECRET_KEY}
+  token-urls:
+    - url: /api/v1/sbs/sftp/file
+pepiPostConfig:
+  apiKey: 4263ad85239509ac2e2950f4429f781b
+  max_number_personalizations: 1
+  emailFromSBS: digital@digital.sbseguros.co
+  number_mails_pepipost: 5000
+  apiKeyDev: 4263ad85239509ac2e2950f4429f781b
+  number_mails_pepipost_dev: 1000
+
+user-credentials:
+  name: ADMIN
+  password: SBS2023
